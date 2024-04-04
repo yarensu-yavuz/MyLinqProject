@@ -8,13 +8,10 @@
 <h2>CategoryIndex</h2>
 
 <p>
-    @Html.ActionLink("Yeni Kategori Ekle", "AddCategory", "", new { @class = "btn-btn-success" })
-
-    @Html.ActionLink("Kategori Sil", "AddCategory", "", new { @class = "btn-btn-success" })
+    @Html.ActionLink("Yeni Kategori Ekle", "AddCategory", "", new { @class = "btn btn-success" })
 </p>
 <table class="table table-bordered">
     <tr class="table table-primary">
-    <tr>
         <th>
             @Html.DisplayNameFor(model => model.CategoryName)
         </th>
@@ -24,6 +21,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Picture)
         </th>
+        <th></th>
+        <th></th>
         <th></th>
     </tr>
 
@@ -37,13 +36,17 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td style="width:25px;">
-                @Html.DisplayFor(modelItem => item.Picture)
+                @*@Html.DisplayFor(modelItem => item.Picture)*@
       
                 
             </td>
             <td>
-                @Html.ActionLink("gnc", "CategoryUpdate", new { id = item.CategoryID }, new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("dty", "Details", new { id = item.CategoryID },new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("gnc", "CategoryUpdate", new { id = item.CategoryID }, new { @class = "btn btn-warning" }) 
+                </td>
+            <td>
+                @Html.ActionLink("dty", "Details", new { id = item.CategoryID },new { @class = "btn btn-primary" }) 
+                </td>
+            <td>
                 @Html.ActionLink("delete", "Delete", new { id = item.CategoryID }, new { @class = "btn btn-danger" })
             </td>
         </tr>
